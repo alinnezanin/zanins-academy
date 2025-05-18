@@ -18,16 +18,12 @@
       padding: 1.5rem;
       text-align: center;
     }
-    h1 {
-      font-size: 2rem;
-      color: white;
-    }
     main {
       max-width: 900px;
       margin: auto;
       padding: 2rem;
     }
-    h2, h3 {
+    h1, h2, h3 {
       color: #003366;
     }
     section {
@@ -59,11 +55,89 @@
 </head>
 <body>
   <header>
-    <h1>CTFL 4.0 – Capítulo 1<br>Conteúdo e Quiz Interativo</h1>
+    <h1>Capítulo 1: Fundamentos de Teste</h1>
+    <p>Resumo completo e quiz interativo</p>
   </header>
   <main>
-    <!-- conteúdo permanece o mesmo: seções 1 a 5, videoaula e quiz -->
-    <!-- ... -->
+    <section>
+      <h2>1. O que é Teste?</h2>
+      <p>O teste de software é uma atividade essencial para garantir que um produto atenda aos seus requisitos e funcione como esperado. Vai além da simples execução de um sistema: envolve planejamento, análise, execução, monitoramento e conclusão.</p>
+      <p>Existem dois tipos principais de teste:</p>
+      <ul>
+        <li><strong>Teste dinâmico</strong>: envolve a execução do software.</li>
+        <li><strong>Teste estático</strong>: realizado sem execução, como revisões e inspeções.</li>
+      </ul>
+      <p>Além disso, o teste se relaciona com dois conceitos-chave:</p>
+      <ul>
+        <li><strong>Verificação</strong>: confirma se o produto atende aos requisitos especificados.</li>
+        <li><strong>Validação</strong>: assegura que o sistema atenda às necessidades reais dos usuários.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Por que os Testes são Necessários?</h2>
+      <p>Testes são cruciais para detectar defeitos, evitar falhas em produção e garantir conformidade com leis e contratos.</p>
+      <ul>
+        <li><strong>QA (Quality Assurance)</strong>: foca em processos, com abordagem preventiva.</li>
+        <li><strong>QC (Quality Control)</strong>: foca no produto, com abordagem corretiva (teste faz parte).</li>
+      </ul>
+      <p>Erros humanos causam <strong>defeitos</strong> que, se executados, resultam em <strong>falhas</strong>. Identificar a <strong>causa-raiz</strong> ajuda a prevenir recorrências.</p>
+    </section>
+
+    <section>
+      <h2>3. Princípios de Teste</h2>
+      <p>São sete os princípios fundamentais:</p>
+      <ol>
+        <li>O teste mostra presença, não ausência de defeitos.</li>
+        <li>Testes exaustivos são impossíveis.</li>
+        <li>Testar cedo economiza tempo e dinheiro.</li>
+        <li>Defeitos se agrupam em poucos módulos.</li>
+        <li>Testes se tornam menos eficazes quando repetidos sem atualização.</li>
+        <li>Testes dependem do contexto.</li>
+        <li>Ausência de defeitos não significa sucesso do sistema.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>4. Atividades, Testware e Papéis</h2>
+      <p>O processo de teste envolve:</p>
+      <ul>
+        <li><strong>Planejamento</strong></li>
+        <li><strong>Monitoramento e controle</strong></li>
+        <li><strong>Análise</strong></li>
+        <li><strong>Modelagem</strong></li>
+        <li><strong>Implementação</strong></li>
+        <li><strong>Execução</strong></li>
+        <li><strong>Conclusão</strong></li>
+      </ul>
+      <p><strong>Testware</strong> são os artefatos criados durante essas atividades, como planos de teste, casos de teste e relatórios.</p>
+      <p><strong>Rastreabilidade</strong> é essencial para mapear requisitos → testes → resultados → defeitos.</p>
+      <p><strong>Papéis no teste:</strong></p>
+      <ul>
+        <li><strong>Gerente de Teste</strong>: lidera o processo, planejamento e equipe.</li>
+        <li><strong>Testador</strong>: foca na execução técnica dos testes.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Habilidades e Boas Práticas</h2>
+      <p>Testadores eficazes devem ter:</p>
+      <ul>
+        <li>Pensamento crítico e analítico</li>
+        <li>Comunicação eficaz</li>
+        <li>Conhecimento técnico e do domínio</li>
+        <li>Curiosidade e atenção aos detalhes</li>
+      </ul>
+      <p>A <strong>abordagem de equipe completa</strong> promove colaboração e qualidade compartilhada.</p>
+      <p>A <strong>independência nos testes</strong> permite novas perspectivas e maior eficácia, mas deve ser equilibrada com a integração da equipe.</p>
+    </section>
+
+    <section>
+      <h2>Videoaula</h2>
+      <p>Assista à videoaula completa clicando no link abaixo:</p>
+      <a href="#" target="_blank">▶️ Assistir à videoaula</a>
+    </section>
+
     <section>
       <h2>Quiz Interativo</h2>
       <div id="quiz-container"></div>
@@ -72,49 +146,140 @@
 
   <script>
     const quiz = [
-      { question: "1. Qual o principal objetivo dos testes de software?", options: ["Remover falhas do código", "Garantir ausência total de defeitos", "Avaliar a qualidade e reduzir riscos", "Testar o software exaustivamente"], answer: 2 },
-      { question: "2. O que diferencia teste de depuração?", options: ["Depuração verifica requisitos, teste corrige falhas", "Teste detecta falhas, depuração identifica e corrige", "Depuração acontece antes do teste", "Não há diferença prática"], answer: 1 },
-      { question: "3. Qual é uma das vantagens da independência dos testes?", options: ["Aumenta os custos do projeto", "Reduz a comunicação entre as equipes", "Detecta falhas com vieses diferentes", "Evita toda colaboração entre testadores e desenvolvedores"], answer: 2 },
-      { question: "4. O que é testware?", options: ["Software usado para testes de segurança", "Conjunto de ferramentas automatizadas", "Artefatos gerados nas atividades de teste", "Somente scripts de automação"], answer: 2 },
-      { question: "5. Qual princípio afirma que defeitos tendem a se concentrar?", options: ["Testes antecipados", "Testes exaustivos", "Defeitos se agrupam", "Teste mostra ausência de erros"], answer: 2 },
-      { question: "6. Por que testar cedo é uma boa prática?", options: ["Evita a necessidade de requisitos", "Reduz retrabalho e custos futuros", "Impede que bugs apareçam no código", "Dispensa a modelagem de teste"], answer: 1 },
-      { question: "7. O que é verificação no contexto de testes?", options: ["Avaliação se o sistema atende ao uso real", "Conformidade com os requisitos especificados", "Ato de corrigir defeitos encontrados", "Teste feito pelos usuários"], answer: 1 },
-      { question: "8. Qual destas é uma habilidade essencial para testadores?", options: ["Memorização de código", "Velocidade na digitação", "Pensamento crítico", "Uso avançado de Excel"], answer: 2 },
-      { question: "9. O que diferencia verificação de validação?", options: ["Validação é feita por gerentes, verificação por usuários", "Verificação assegura requisitos, validação assegura expectativas", "Ambas significam o mesmo", "Verificação ocorre no fim do ciclo"], answer: 1 },
-      { question: "10. Qual das opções representa um produto de trabalho típico do testware?", options: ["Cronograma de desenvolvimento", "Caso de teste", "Diagrama de classes", "Manual do usuário"], answer: 1 }
-    ];
+  {
+    question: "1. Qual o principal objetivo dos testes de software?",
+    options: [
+      "Remover falhas do código",
+      "Garantir ausência total de defeitos",
+      "Avaliar a qualidade e reduzir riscos",
+      "Testar o software exaustivamente"
+    ],
+    answer: 2
+  },
+  {
+    question: "2. O que diferencia teste de depuração?",
+    options: [
+      "Depuração verifica requisitos, teste corrige falhas",
+      "Teste detecta falhas, depuração identifica e corrige",
+      "Depuração acontece antes do teste",
+      "Não há diferença prática"
+    ],
+    answer: 1
+  },
+  {
+    question: "3. Qual é uma das vantagens da independência dos testes?",
+    options: [
+      "Aumenta os custos do projeto",
+      "Reduz a comunicação entre as equipes",
+      "Detecta falhas com vieses diferentes",
+      "Evita toda colaboração entre testadores e desenvolvedores"
+    ],
+    answer: 2
+  },
+  {
+    question: "4. O que é testware?",
+    options: [
+      "Software usado para testes de segurança",
+      "Conjunto de ferramentas automatizadas",
+      "Artefatos gerados nas atividades de teste",
+      "Somente scripts de automação"
+    ],
+    answer: 2
+  },
+  {
+    question: "5. Qual princípio afirma que defeitos tendem a se concentrar?",
+    options: [
+      "Testes antecipados",
+      "Testes exaustivos",
+      "Defeitos se agrupam",
+      "Teste mostra ausência de erros"
+    ],
+    answer: 2
+  },
+  {
+    question: "6. Por que testar cedo é uma boa prática?",
+    options: [
+      "Evita a necessidade de requisitos",
+      "Reduz retrabalho e custos futuros",
+      "Impede que bugs apareçam no código",
+      "Dispensa a modelagem de teste"
+    ],
+    answer: 1
+  },
+  {
+    question: "7. O que é verificação no contexto de testes?",
+    options: [
+      "Avaliação se o sistema atende ao uso real",
+      "Conformidade com os requisitos especificados",
+      "Ato de corrigir defeitos encontrados",
+      "Teste feito pelos usuários"
+    ],
+    answer: 1
+  },
+  {
+    question: "8. Qual destas é uma habilidade essencial para testadores?",
+    options: [
+      "Memorização de código",
+      "Velocidade na digitação",
+      "Pensamento crítico",
+      "Uso avançado de Excel"
+    ],
+    answer: 2
+  },
+  {
+    question: "9. O que diferencia verificação de validação?",
+    options: [
+      "Validação é feita por gerentes, verificação por usuários",
+      "Verificação assegura requisitos, validação assegura expectativas",
+      "Ambas significam o mesmo",
+      "Verificação ocorre no fim do ciclo"
+    ],
+    answer: 1
+  },
+  {
+    question: "10. Qual das opções representa um produto de trabalho típico do testware?",
+    options: [
+      "Cronograma de desenvolvimento",
+      "Caso de teste",
+      "Diagrama de classes",
+      "Manual do usuário"
+    ],
+    answer: 1
+  }
+];
 
-    const container = document.getElementById("quiz-container");
-    quiz.forEach((q, i) => {
-      const div = document.createElement("div");
-      div.className = "question";
-      div.innerHTML = `<p><strong>${q.question}</strong></p>` +
-        q.options.map((opt, idx) => `
-          <div>
-            <input type="radio" name="q${i}" id="q${i}a${idx}" value="${idx}">
-            <label for="q${i}a${idx}">${opt}</label>
-          </div>`).join("") +
-        `<button onclick="checkAnswer(${i}, ${q.answer})">Verificar</button>
-         <p id="feedback${i}"></p>`;
-      container.appendChild(div);
-    });
+const container = document.getElementById("quiz-container");
 
-    function checkAnswer(questionIdx, correctIdx) {
-      const selected = document.querySelector(`input[name='q${questionIdx}']:checked`);
-      const feedback = document.getElementById(`feedback${questionIdx}`);
-      if (!selected) {
-        feedback.textContent = "Selecione uma opção.";
-        feedback.className = "incorrect";
-        return;
-      }
-      if (parseInt(selected.value) === correctIdx) {
-        feedback.textContent = "✔️ Resposta correta!";
-        feedback.className = "correct";
-      } else {
-        feedback.textContent = "❌ Resposta incorreta.";
-        feedback.className = "incorrect";
-      }
-    }
+quiz.forEach((q, i) => {
+  const div = document.createElement("div");
+  div.className = "question";
+  div.innerHTML = `<p><strong>${q.question}</strong></p>` +
+    q.options.map((opt, idx) => `
+      <div>
+        <input type="radio" name="q${i}" id="q${i}a${idx}" value="${idx}">
+        <label for="q${i}a${idx}">${opt}</label>
+      </div>`).join("") +
+    `<button onclick="checkAnswer(${i}, ${q.answer})">Verificar</button>
+     <p id="feedback${i}"></p>`;
+  container.appendChild(div);
+});
+
+function checkAnswer(questionIdx, correctIdx) {
+  const selected = document.querySelector(`input[name='q${questionIdx}']:checked`);
+  const feedback = document.getElementById(`feedback${questionIdx}`);
+  if (!selected) {
+    feedback.textContent = "Selecione uma opção.";
+    feedback.className = "incorrect";
+    return;
+  }
+  if (parseInt(selected.value) === correctIdx) {
+    feedback.textContent = "✔️ Resposta correta!";
+    feedback.className = "correct";
+  } else {
+    feedback.textContent = "❌ Resposta incorreta.";
+    feedback.className = "incorrect";
+  }
+}
   </script>
 </body>
 </html>
