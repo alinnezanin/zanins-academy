@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa Mental - Capítulo 1: Fundamentos de Teste</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f7fa;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #333;
+    }
+    h1 {
+      background: #003366;
+      color: white;
+      padding: 1.5rem;
+      margin: 0;
+    }
+    .node {
+      border: 2px solid #0077cc;
+      padding: 1rem;
+      margin: 1rem auto;
+      width: 280px;
+      border-radius: 10px;
+      background: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .node:hover {
+      background: #e6f3ff;
+    }
+    .branch {
+      display: none;
+      margin: 1rem 0 2rem 0;
+    }
+    .branch p {
+      margin: 0.3rem;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mapa Mental - Capítulo 1: Fundamentos de Teste</h1>
+
+  <div class="node" onclick="toggle('teste')">📌 O que é Teste?</div>
+  <div class="branch" id="teste">
+    <p>✔️ Verificação + Validação</p>
+    <p>✔️ Teste Estático e Dinâmico</p>
+    <p>✔️ Confiança no produto</p>
+  </div>
+
+  <div class="node" onclick="toggle('porque')">❓ Por que os Testes são Necessários?</div>
+  <div class="branch" id="porque">
+    <p>✔️ Evita falhas em produção</p>
+    <p>✔️ Reduz riscos e custos</p>
+    <p>✔️ Garantia contratual, legal</p>
+  </div>
+
+  <div class="node" onclick="toggle('principios')">📚 Princípios de Teste</div>
+  <div class="branch" id="principios">
+    <p>✔️ Verifica presença, não ausência</p>
+    <p>✔️ Testes exaustivos são impossíveis</p>
+    <p>✔️ Testar cedo economiza custos</p>
+    <p>✔️ Defeitos se agrupam</p>
+    <p>✔️ Testes precisam mudar</p>
+    <p>✔️ Teste depende do contexto</p>
+    <p>✔️ Sem defeito ≠ sucesso</p>
+  </div>
+
+  <div class="node" onclick="toggle('atividades')">🛠️ Atividades, Testware e Papéis</div>
+  <div class="branch" id="atividades">
+    <p>✔️ Planejamento</p>
+    <p>✔️ Análise e Modelagem</p>
+    <p>✔️ Implementação e Execução</p>
+    <p>✔️ Conclusão e Relatórios</p>
+    <p>✔️ Testware: artefatos de teste</p>
+    <p>✔️ Papéis: gerente e testador</p>
+  </div>
+
+  <div class="node" onclick="toggle('habilidades')">🎯 Habilidades e Boas Práticas</div>
+  <div class="branch" id="habilidades">
+    <p>✔️ Pensamento crítico</p>
+    <p>✔️ Comunicação eficaz</p>
+    <p>✔️ Independência do testador</p>
+    <p>✔️ Abordagem de equipe completa</p>
+  </div>
+
+  <script>
+    function toggle(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

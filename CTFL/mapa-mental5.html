@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa Mental - Capítulo 5: Gerenciamento de Teste</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f7fa;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #333;
+    }
+    h1 {
+      background: #003366;
+      color: white;
+      padding: 1.5rem;
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    .node {
+      border: 2px solid #0077cc;
+      padding: 1rem;
+      margin: 1rem auto;
+      width: 90%;
+      max-width: 320px;
+      border-radius: 12px;
+      background: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    .node:hover {
+      background: #e6f3ff;
+      transform: scale(1.02);
+    }
+    .branch {
+      display: none;
+      margin: 0 auto 2rem auto;
+      max-width: 320px;
+      text-align: left;
+      background: #ffffff;
+      border-left: 4px solid #0077cc;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    .branch p {
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mapa Mental - Capítulo 5: Gerenciamento de Teste</h1>
+
+  <div class="node" onclick="toggle('planejamento')">📝 Planejamento e Estimativa</div>
+  <div class="branch" id="planejamento">
+    <p>✔️ Objetivos do teste</p>
+    <p>✔️ Abordagem e escopo</p>
+    <p>✔️ Recursos e cronograma</p>
+    <p>✔️ Critérios de entrada e saída</p>
+    <p>✔️ Riscos e contingências</p>
+  </div>
+
+  <div class="node" onclick="toggle('monitoramento')">📊 Monitoramento e Controle</div>
+  <div class="branch" id="monitoramento">
+    <p>✔️ Relatórios de status</p>
+    <p>✔️ Indicadores de progresso</p>
+    <p>✔️ Acompanhamento de desvios</p>
+    <p>✔️ Ajustes no plano de teste</p>
+  </div>
+
+  <div class="node" onclick="toggle('risco')">⚠️ Gerenciamento de Riscos</div>
+  <div class="branch" id="risco">
+    <p>✔️ Identificação de riscos</p>
+    <p>✔️ Avaliação de impacto e probabilidade</p>
+    <p>✔️ Ações de mitigação</p>
+  </div>
+
+  <div class="node" onclick="toggle('configuracao')">⚙️ Gerenciamento de Configuração</div>
+  <div class="branch" id="configuracao">
+    <p>✔️ Identificação e controle de itens</p>
+    <p>✔️ Versionamento e rastreabilidade</p>
+    <p>✔️ Relação com o repositório de testes</p>
+  </div>
+
+  <div class="node" onclick="toggle('indicadores')">📈 Indicadores de Teste</div>
+  <div class="branch" id="indicadores">
+    <p>✔️ Taxa de detecção de defeitos</p>
+    <p>✔️ Cobertura de testes</p>
+    <p>✔️ Número de casos executados</p>
+    <p>✔️ Taxa de sucesso/falha</p>
+  </div>
+
+  <script>
+    function toggle(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

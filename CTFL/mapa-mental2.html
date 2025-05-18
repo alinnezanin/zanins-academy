@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa Mental - Capítulo 2: Teste Durante o Ciclo de Vida</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f7fa;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #333;
+    }
+    h1 {
+      background: #003366;
+      color: white;
+      padding: 1.5rem;
+      margin: 0;
+    }
+    .node {
+      border: 2px solid #0077cc;
+      padding: 1rem;
+      margin: 1rem auto;
+      width: 280px;
+      border-radius: 10px;
+      background: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .node:hover {
+      background: #e6f3ff;
+    }
+    .branch {
+      display: none;
+      margin: 1rem 0 2rem 0;
+    }
+    .branch p {
+      margin: 0.3rem;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mapa Mental - Capítulo 2: Teste Durante o Ciclo de Vida</h1>
+
+  <div class="node" onclick="toggle('relacao')">🔁 Relação entre Teste e Desenvolvimento</div>
+  <div class="branch" id="relacao">
+    <p>✔️ O teste acompanha o ciclo de vida</p>
+    <p>✔️ Modelos sequenciais vs. iterativos</p>
+    <p>✔️ Teste contínuo e precoce reduz riscos</p>
+  </div>
+
+  <div class="node" onclick="toggle('niveis')">📊 Níveis de Teste</div>
+  <div class="branch" id="niveis">
+    <p>✔️ Teste Unitário</p>
+    <p>✔️ Teste de Integração</p>
+    <p>✔️ Teste de Sistema</p>
+    <p>✔️ Teste de Aceitação</p>
+    <p>✔️ Aplicáveis em diferentes níveis e contextos</p>
+  </div>
+
+  <div class="node" onclick="toggle('tipos')">🎯 Tipos de Teste</div>
+  <div class="branch" id="tipos">
+    <p>✔️ Funcional (baseado em requisitos)</p>
+    <p>✔️ Não-funcional (desempenho, usabilidade, etc.)</p>
+    <p>✔️ Estrutural (código e estrutura interna)</p>
+    <p>✔️ Relacionado a mudanças (reteste e regressão)</p>
+  </div>
+
+  <div class="node" onclick="toggle('caixa')">📦 Abordagens Caixa Preta, Branca e Cinza</div>
+  <div class="branch" id="caixa">
+    <p>✔️ Caixa Preta: baseado nas entradas e saídas</p>
+    <p>✔️ Caixa Branca: foco na lógica interna</p>
+    <p>✔️ Caixa Cinza: combinação dos dois</p>
+  </div>
+
+  <script>
+    function toggle(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

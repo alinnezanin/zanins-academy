@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa Mental - Capítulo 6: Ferramentas de Teste</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f7fa;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #333;
+    }
+    h1 {
+      background: #003366;
+      color: white;
+      padding: 1.5rem;
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    .node {
+      border: 2px solid #0077cc;
+      padding: 1rem;
+      margin: 1rem auto;
+      width: 90%;
+      max-width: 320px;
+      border-radius: 12px;
+      background: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    .node:hover {
+      background: #e6f3ff;
+      transform: scale(1.02);
+    }
+    .branch {
+      display: none;
+      margin: 0 auto 2rem auto;
+      max-width: 320px;
+      text-align: left;
+      background: #ffffff;
+      border-left: 4px solid #0077cc;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    .branch p {
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mapa Mental - Capítulo 6: Ferramentas de Teste</h1>
+
+  <div class="node" onclick="toggle('beneficios')">🌟 Benefícios das Ferramentas</div>
+  <div class="branch" id="beneficios">
+    <p>✔️ Aumento da eficiência</p>
+    <p>✔️ Repetibilidade e consistência</p>
+    <p>✔️ Melhor rastreabilidade</p>
+    <p>✔️ Apoio à automação e relatórios</p>
+  </div>
+
+  <div class="node" onclick="toggle('classificacao')">📦 Classificação das Ferramentas</div>
+  <div class="branch" id="classificacao">
+    <p>✔️ Apoio à gestão de teste</p>
+    <p>✔️ Execução de teste</p>
+    <p>✔️ Comparação e análise de resultados</p>
+    <p>✔️ Gestão de defeitos</p>
+    <p>✔️ Revisão estática e cobertura</p>
+    <p>✔️ Ambientes simulados e dados de teste</p>
+  </div>
+
+  <div class="node" onclick="toggle('consideracoes')">🔍 Considerações para Seleção</div>
+  <div class="branch" id="consideracoes">
+    <p>✔️ Licenciamento e custo</p>
+    <p>✔️ Compatibilidade com o ambiente</p>
+    <p>✔️ Facilidade de uso e integração</p>
+    <p>✔️ Suporte e comunidade</p>
+    <p>✔️ Avaliação e prova de conceito</p>
+  </div>
+
+  <div class="node" onclick="toggle('fatores')">⚠️ Fatores de Sucesso e Riscos</div>
+  <div class="branch" id="fatores">
+    <p>✔️ Apoio da gestão</p>
+    <p>✔️ Treinamento e adoção</p>
+    <p>✔️ Integração com processos existentes</p>
+    <p>✔️ Riscos: abandono, curva de aprendizado, falhas técnicas</p>
+  </div>
+
+  <script>
+    function toggle(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

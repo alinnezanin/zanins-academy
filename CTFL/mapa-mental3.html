@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa Mental - Capítulo 3: Teste Estático</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f7fa;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #333;
+    }
+    h1 {
+      background: #003366;
+      color: white;
+      padding: 1.5rem;
+      margin: 0;
+    }
+    .node {
+      border: 2px solid #0077cc;
+      padding: 1rem;
+      margin: 1rem auto;
+      width: 280px;
+      border-radius: 10px;
+      background: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .node:hover {
+      background: #e6f3ff;
+    }
+    .branch {
+      display: none;
+      margin: 1rem 0 2rem 0;
+    }
+    .branch p {
+      margin: 0.3rem;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mapa Mental - Capítulo 3: Teste Estático</h1>
+
+  <div class="node" onclick="toggle('visao')">🔍 Visão Geral</div>
+  <div class="branch" id="visao">
+    <p>✔️ Teste sem execução de código</p>
+    <p>✔️ Inclui revisões e análises</p>
+    <p>✔️ Detecta defeitos precocemente</p>
+  </div>
+
+  <div class="node" onclick="toggle('beneficios')">✅ Benefícios do Teste Estático</div>
+  <div class="branch" id="beneficios">
+    <p>✔️ Aumento da produtividade</p>
+    <p>✔️ Redução de retrabalho</p>
+    <p>✔️ Detecção precoce de defeitos</p>
+    <p>✔️ Melhor comunicação</p>
+  </div>
+
+  <div class="node" onclick="toggle('processo')">📋 Processo de Revisão</div>
+  <div class="branch" id="processo">
+    <p>✔️ Planejamento</p>
+    <p>✔️ Início da revisão</p>
+    <p>✔️ Preparação</p>
+    <p>✔️ Inspeção</p>
+    <p>✔️ Reunião</p>
+    <p>✔️ Re-trabalho</p>
+    <p>✔️ Conclusão</p>
+  </div>
+
+  <div class="node" onclick="toggle('tipos')">📑 Tipos de Revisão</div>
+  <div class="branch" id="tipos">
+    <p>✔️ Informal</p>
+    <p>✔️ Walkthrough</p>
+    <p>✔️ Técnica (Formal)</p>
+    <p>✔️ Inspeção</p>
+  </div>
+
+  <div class="node" onclick="toggle('analise')">🧠 Análise Estática com Ferramentas</div>
+  <div class="branch" id="analise">
+    <p>✔️ Avaliação de código-fonte</p>
+    <p>✔️ Avaliação de documentação</p>
+    <p>✔️ Localização de vulnerabilidades e padrões</p>
+  </div>
+
+  <script>
+    function toggle(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

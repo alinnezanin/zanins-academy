@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa Mental - Capítulo 4: Técnicas de Teste</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f7fa;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #333;
+    }
+
+    h1 {
+      background: #003366;
+      color: white;
+      padding: 1.5rem;
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    .node {
+      border: 2px solid #0077cc;
+      padding: 1rem;
+      margin: 1rem auto;
+      width: 90%;
+      max-width: 320px;
+      border-radius: 12px;
+      background: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .node:hover {
+      background: #e6f3ff;
+      transform: scale(1.02);
+    }
+
+    .branch {
+      display: none;
+      margin: 0 auto 2rem auto;
+      max-width: 320px;
+      text-align: left;
+      background: #ffffff;
+      border-left: 4px solid #0077cc;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .branch p {
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mapa Mental - Capítulo 4: Técnicas de Teste</h1>
+
+  <div class="node" onclick="toggle('tecnicas')">🛠️ Técnicas Caixa Preta</div>
+  <div class="branch" id="tecnicas">
+    <p>✔️ Partição de equivalência</p>
+    <p>✔️ Análise do valor limite</p>
+    <p>✔️ Tabela de decisão</p>
+    <p>✔️ Teste de transição de estado</p>
+    <p>✔️ Teste baseado em casos de uso</p>
+  </div>
+
+  <div class="node" onclick="toggle('caixaBranca')">⚙️ Técnicas Caixa Branca</div>
+  <div class="branch" id="caixaBranca">
+    <p>✔️ Cobertura de instruções</p>
+    <p>✔️ Cobertura de decisões</p>
+  </div>
+
+  <div class="node" onclick="toggle('baseadasExperiencia')">🎓 Técnicas Baseadas em Experiência</div>
+  <div class="branch" id="baseadasExperiencia">
+    <p>✔️ Adivinhação de erro</p>
+    <p>✔️ Teste exploratório</p>
+    <p>✔️ Teste baseado em checklist</p>
+  </div>
+
+  <div class="node" onclick="toggle('selecionar')">🔍 Seleção de Técnicas</div>
+  <div class="branch" id="selecionar">
+    <p>✔️ Tipo de sistema</p>
+    <p>✔️ Regulamentações</p>
+    <p>✔️ Nível de risco</p>
+    <p>✔️ Nível de teste</p>
+    <p>✔️ Documentação disponível</p>
+    <p>✔️ Cronograma e experiência</p>
+  </div>
+
+  <script>
+    function toggle(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
