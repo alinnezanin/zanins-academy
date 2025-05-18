@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 6 - Ferramentas de Teste</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #f9f9f9; color: #222; margin: 0; padding: 0; }
+    header { background: #003366; color: white; padding: 1.5rem; text-align: center; }
+    h1 { font-size: 2rem; color: white; }
+    main { max-width: 900px; margin: auto; padding: 2rem; }
+    h2, h3 { color: #003366; }
+    section { margin-bottom: 2rem; }
+    .question { margin-bottom: 1.5rem; background: #fff; padding: 1rem; border-left: 5px solid #003366; }
+    button { margin-top: 0.5rem; background-color: #003366; color: white; border: none; padding: 0.4rem 0.8rem; cursor: pointer; }
+    .correct { color: green; font-weight: bold; }
+    .incorrect { color: red; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CTFL 4.0 – Capítulo 6<br>Conteúdo e Quiz Interativo</h1>
+  </header>
+  <main>
+    <section>
+      <h2>1. Considerações ao Usar Ferramentas</h2>
+      <p>Ferramentas podem aumentar a eficiência e consistência das atividades de teste. Antes da adoção, é importante:</p>
+      <ul>
+        <li>Entender os objetivos e benefícios esperados</li>
+        <li>Avaliar o custo e retorno do investimento</li>
+        <li>Considerar a curva de aprendizado e suporte</li>
+        <li>Planejar a integração com o processo atual</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Tipos de Ferramentas de Teste</h2>
+      <ul>
+        <li><strong>Gerenciamento de Testes:</strong> planejamento, controle e rastreabilidade</li>
+        <li><strong>Projeto e Implementação de Testes:</strong> geração e manutenção de casos de teste</li>
+        <li><strong>Execução:</strong> automação de testes funcionais, não-funcionais e unitários</li>
+        <li><strong>Suporte a Testes:</strong> comparadores, simuladores (stubs/drivers), geradores de dados</li>
+        <li><strong>Revisão e Estática:</strong> revisões, análises de código</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Classificação das Ferramentas</h2>
+      <p>Ferramentas podem ser:</p>
+      <ul>
+        <li><strong>Open source:</strong> código aberto, com ou sem comunidade ativa</li>
+        <li><strong>Comerciais:</strong> licenciadas, geralmente com suporte profissional</li>
+        <li><strong>Internas:</strong> desenvolvidas pela própria organização para atender necessidades específicas</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Sucesso na Implantação de Ferramentas</h2>
+      <p>O sucesso depende de:</p>
+      <ul>
+        <li>Patrocínio da gestão</li>
+        <li>Planejamento e objetivos claros</li>
+        <li>Treinamento adequado</li>
+        <li>Projetos-piloto</li>
+        <li>Monitoramento dos resultados</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Videoaula</h2>
+      <p>Assista à videoaula completa clicando no link abaixo:</p>
+      <a href="#" target="_blank">▶️ Assistir à videoaula</a>
+    </section>
+
+    <section>
+      <h2>Quiz Interativo</h2>
+      <div id="quiz-container"></div>
+    </section>
+  </main>
+
+  <script>
+    const quiz = [
+      { question: "1. Por que usar ferramentas de teste?", options: ["Para aumentar o esforço manual", "Para reduzir a cobertura de teste", "Para aumentar eficiência e consistência", "Para reduzir testes automatizados"], answer: 2 },
+      { question: "2. O que deve ser considerado antes de adotar uma ferramenta?", options: ["A versão do sistema operacional", "O nome do fornecedor", "Custo, integração e objetivos claros", "A quantidade de testadores"], answer: 2 },
+      { question: "3. Qual ferramenta auxilia no rastreamento de testes e defeitos?", options: ["IDE", "Ferramenta de gerenciamento de testes", "Editor de texto", "Compilador"], answer: 1 },
+      { question: "4. Ferramentas de execução são usadas para:", options: ["Revisar código-fonte", "Planejar releases", "Automatizar testes funcionais ou unitários", "Escrever documentação"], answer: 2 },
+      { question: "5. Ferramentas de suporte incluem:", options: ["Geradores de dados e simuladores", "Planilhas", "Browsers", "IDE"], answer: 0 },
+      { question: "6. O que diferencia ferramentas open source?", options: ["Não funcionam bem", "Exigem conexão com internet", "São de código aberto", "Só funcionam em Linux"], answer: 2 },
+      { question: "7. Ferramentas comerciais geralmente oferecem:", options: ["Acesso irrestrito ao código-fonte", "Suporte profissional", "Treinamento gratuito", "Ambiente de produção"], answer: 1 },
+      { question: "8. Ferramentas internas são:", options: ["Criadas pela equipe de desenvolvimento da organização", "Compradas de grandes fornecedores", "Sempre melhores que as comerciais", "Proibidas em ambientes ágeis"], answer: 0 },
+      { question: "9. Um fator essencial para sucesso na implantação de ferramentas é:", options: ["Baixo custo", "Planejamento, treinamento e apoio da gestão", "Falta de documentação", "Execução contínua"], answer: 1 },
+      { question: "10. Projetos-piloto servem para:", options: ["Pular etapas do processo", "Validar o uso da ferramenta em pequena escala", "Criar testes de integração", "Desenvolver manual de usuário"], answer: 1 }
+    ];
+
+    const container = document.getElementById("quiz-container");
+    quiz.forEach((q, i) => {
+      const div = document.createElement("div");
+      div.className = "question";
+      div.innerHTML = `<p><strong>${q.question}</strong></p>` +
+        q.options.map((opt, idx) => `
+          <div>
+            <input type="radio" name="q${i}" id="q${i}a${idx}" value="${idx}">
+            <label for="q${i}a${idx}">${opt}</label>
+          </div>`).join("") +
+        `<button onclick="checkAnswer(${i}, ${q.answer})">Verificar</button>
+         <p id="feedback${i}"></p>`;
+      container.appendChild(div);
+    });
+
+    function checkAnswer(questionIdx, correctIdx) {
+      const selected = document.querySelector(`input[name='q${questionIdx}']:checked`);
+      const feedback = document.getElementById(`feedback${questionIdx}`);
+      if (!selected) {
+        feedback.textContent = "Selecione uma opção.";
+        feedback.className = "incorrect";
+        return;
+      }
+      if (parseInt(selected.value) === correctIdx) {
+        feedback.textContent = "✔️ Resposta correta!";
+        feedback.className = "correct";
+      } else {
+        feedback.textContent = "❌ Resposta incorreta.";
+        feedback.className = "incorrect";
+      }
+    }
+  </script>
+</body>
+</html>

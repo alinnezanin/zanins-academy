@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 3 - Teste Estático</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #f9f9f9; color: #222; margin: 0; padding: 0; }
+    header { background: #003366; color: white; padding: 1.5rem; text-align: center; }
+    h1 { font-size: 2rem; color: white; }
+    main { max-width: 900px; margin: auto; padding: 2rem; }
+    h2, h3 { color: #003366; }
+    section { margin-bottom: 2rem; }
+    .question { margin-bottom: 1.5rem; background: #fff; padding: 1rem; border-left: 5px solid #003366; }
+    button { margin-top: 0.5rem; background-color: #003366; color: white; border: none; padding: 0.4rem 0.8rem; cursor: pointer; }
+    .correct { color: green; font-weight: bold; }
+    .incorrect { color: red; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CTFL 4.0 – Capítulo 3<br>Conteúdo e Quiz Interativo</h1>
+  </header>
+  <main>
+    <section>
+      <h2>1. Conceito de Teste Estático</h2>
+      <p>Testes estáticos são realizados sem a execução do código. Eles buscam identificar defeitos em artefatos como documentos, requisitos, diagramas e código-fonte.</p>
+      <p>São mais eficazes quando aplicados nas fases iniciais do ciclo de vida do software, pois ajudam a prevenir a propagação de erros.</p>
+    </section>
+
+    <section>
+      <h2>2. Benefícios dos Testes Estáticos</h2>
+      <ul>
+        <li>Detecção precoce de defeitos</li>
+        <li>Redução de retrabalho e custos</li>
+        <li>Melhoria na comunicação da equipe</li>
+        <li>Aumento da qualidade do software</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Tipos de Testes Estáticos</h2>
+      <p>Os testes estáticos podem ser divididos em:</p>
+      <ul>
+        <li><strong>Revisões:</strong> análise de artefatos por pessoas. Incluem inspeções, walkthroughs e revisões técnicas informais e formais.</li>
+        <li><strong>Análise Estática Automatizada:</strong> uso de ferramentas para detectar vulnerabilidades, violações de padrão, complexidade excessiva e código morto.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Processo de Revisão</h2>
+      <p>O processo de revisão formal (como inspeções) possui papéis e etapas definidos:</p>
+      <ul>
+        <li><strong>Planejamento:</strong> definição do escopo e objetivos</li>
+        <li><strong>Preparação individual:</strong> cada revisor analisa o artefato separadamente</li>
+        <li><strong>Reunião de revisão:</strong> discussão em grupo para identificar defeitos</li>
+        <li><strong>Correção:</strong> autor ajusta o artefato</li>
+        <li><strong>Verificação de retrabalho:</strong> conferência final</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Papéis em Revisões</h2>
+      <ul>
+        <li><strong>Autor:</strong> cria o artefato</li>
+        <li><strong>Moderador:</strong> facilita a revisão</li>
+        <li><strong>Leitor:</strong> guia a equipe pelo artefato</li>
+        <li><strong>Revisor:</strong> avalia e identifica defeitos</li>
+        <li><strong>Gerente:</strong> apoia e acompanha o processo</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Videoaula</h2>
+      <p>Assista à videoaula completa clicando no link abaixo:</p>
+      <a href="#" target="_blank">▶️ Assistir à videoaula</a>
+    </section>
+
+    <section>
+      <h2>Quiz Interativo</h2>
+      <div id="quiz-container"></div>
+    </section>
+  </main>
+
+  <script>
+    const quiz = [
+      { question: "1. O que caracteriza um teste estático?", options: ["É executado com o sistema em produção", "Não envolve execução do software", "Requer usuários finais", "É sempre automatizado"], answer: 1 },
+      { question: "2. Um benefício dos testes estáticos é:", options: ["Aumento da velocidade de execução do software", "Correção automática de código", "Detecção precoce de defeitos", "Execução mais rápida que testes dinâmicos"], answer: 2 },
+      { question: "3. Walkthrough é um tipo de:", options: ["Teste automatizado", "Inspeção formal", "Revisão estática", "Simulação de interface"], answer: 2 },
+      { question: "4. A análise estática automatizada pode detectar:", options: ["Usabilidade", "Performance de banco de dados", "Código morto", "Preferências do usuário"], answer: 2 },
+      { question: "5. Quem é responsável por guiar a equipe na leitura do artefato?", options: ["Moderador", "Revisor", "Leitor", "Autor"], answer: 2 },
+      { question: "6. Qual é o papel do autor em uma revisão?", options: ["Executar testes", "Revisar código dos outros", "Facilitar a reunião", "Criar e corrigir o artefato"], answer: 3 },
+      { question: "7. A verificação de retrabalho ocorre após:", options: ["Planejamento", "Preparação individual", "Correção do artefato", "Reunião de revisão"], answer: 2 },
+      { question: "8. Qual etapa envolve a identificação coletiva de defeitos?", options: ["Preparação", "Planejamento", "Reunião de revisão", "Verificação de retrabalho"], answer: 2 },
+      { question: "9. Quem facilita o processo de revisão?", options: ["Gerente", "Moderador", "Autor", "Revisor"], answer: 1 },
+      { question: "10. O uso de ferramentas em testes estáticos caracteriza:", options: ["Inspeções", "Walkthroughs", "Revisões informais", "Análise estática automatizada"], answer: 3 }
+    ];
+
+    const container = document.getElementById("quiz-container");
+    quiz.forEach((q, i) => {
+      const div = document.createElement("div");
+      div.className = "question";
+      div.innerHTML = `<p><strong>${q.question}</strong></p>` +
+        q.options.map((opt, idx) => `
+          <div>
+            <input type="radio" name="q${i}" id="q${i}a${idx}" value="${idx}">
+            <label for="q${i}a${idx}">${opt}</label>
+          </div>`).join("") +
+        `<button onclick="checkAnswer(${i}, ${q.answer})">Verificar</button>
+         <p id="feedback${i}"></p>`;
+      container.appendChild(div);
+    });
+
+    function checkAnswer(questionIdx, correctIdx) {
+      const selected = document.querySelector(`input[name='q${questionIdx}']:checked`);
+      const feedback = document.getElementById(`feedback${questionIdx}`);
+      if (!selected) {
+        feedback.textContent = "Selecione uma opção.";
+        feedback.className = "incorrect";
+        return;
+      }
+      if (parseInt(selected.value) === correctIdx) {
+        feedback.textContent = "✔️ Resposta correta!";
+        feedback.className = "correct";
+      } else {
+        feedback.textContent = "❌ Resposta incorreta.";
+        feedback.className = "incorrect";
+      }
+    }
+  </script>
+</body>
+</html>

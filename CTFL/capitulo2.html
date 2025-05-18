@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 2 - Teste ao Longo do Ciclo de Vida</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #f9f9f9; color: #222; margin: 0; padding: 0; }
+    header { background: #003366; color: white; padding: 1.5rem; text-align: center; }
+    main { max-width: 900px; margin: auto; padding: 2rem; }
+    h1, h2, h3 { color: #003366; }
+    h1 { font-size: 2rem; color: white; }
+    h2 { font-size: 1.6rem; }
+    section { margin-bottom: 2rem; }
+    .question { margin-bottom: 1.5rem; background: #fff; padding: 1rem; border-left: 5px solid #003366; }
+    button { margin-top: 0.5rem; background-color: #003366; color: white; border: none; padding: 0.4rem 0.8rem; cursor: pointer; }
+    .correct { color: green; font-weight: bold; }
+    .incorrect { color: red; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CTFL 4.0 – Capítulo 2<br>Conteúdo e Quiz Interativo</h1>
+  </header>
+  <main>
+    <section>
+      <h2>1. Modelos de Ciclo de Vida de Software</h2>
+      <p>O ciclo de vida adotado influencia fortemente as atividades de teste. Os modelos determinam quando o teste é planejado, iniciado e finalizado. Os principais modelos são:</p>
+      <ul>
+        <li><strong>Cascata:</strong> modelo sequencial com fases bem definidas. O teste ocorre após o desenvolvimento.</li>
+        <li><strong>V-Model:</strong> cada fase de desenvolvimento tem uma fase de teste correspondente. Testes são planejados desde o início.</li>
+        <li><strong>Iterativo/Incremental (ex: Ágil):</strong> testes contínuos em ciclos curtos. Requer colaboração intensa e adaptação constante.</li>
+        <li><strong>Big-Bang:</strong> tudo é integrado e testado de uma vez no final. Alto risco e baixa previsibilidade.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Níveis de Teste</h2>
+      <p>Organizam as atividades de teste de acordo com o foco e o estágio do desenvolvimento:</p>
+      <ul>
+        <li><strong>Componente:</strong> testa unidades isoladas. Foco técnico e realizado por desenvolvedores.</li>
+        <li><strong>Integração:</strong> verifica interações entre componentes. Pode ser incremental, top-down ou bottom-up.</li>
+        <li><strong>Sistema:</strong> avalia o sistema como um todo, considerando requisitos funcionais e não funcionais.</li>
+        <li><strong>Aceitação:</strong> valida se o sistema atende às necessidades do cliente. Inclui testes alfa, beta e operacionais.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Tipos de Teste</h2>
+      <p>Classificados com base no objetivo:</p>
+      <ul>
+        <li><strong>Funcional:</strong> valida funcionalidades de acordo com requisitos. Técnicas de caixa preta são comuns.</li>
+        <li><strong>Não-funcional:</strong> avalia atributos como desempenho, usabilidade, confiabilidade e segurança.</li>
+        <li><strong>Re-teste:</strong> confirma se um defeito foi realmente corrigido.</li>
+        <li><strong>Regressão:</strong> garante que modificações não impactaram funcionalidades já existentes.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Teste de Manutenção</h2>
+      <p>Executado após o sistema estar em produção. Inclui alterações corretivas, evolutivas ou adaptativas.</p>
+      <ul>
+        <li><strong>Corretiva:</strong> correção de defeitos encontrados em produção.</li>
+        <li><strong>Adaptativa:</strong> ajustes para novos ambientes ou plataformas.</li>
+        <li><strong>Perfeccionista:</strong> melhorias internas sem alterar comportamento funcional.</li>
+        <li><strong>Preventiva:</strong> mudanças para evitar falhas futuras.</li>
+      </ul>
+      <p>Testes de regressão e de confirmação são essenciais nesta fase.</p>
+    </section>
+
+    <section>
+      <h2>Videoaula</h2>
+      <p>Assista à videoaula completa clicando no link abaixo:</p>
+      <a href="#" target="_blank">▶️ Assistir à videoaula</a>
+    </section>
+
+    <section>
+      <h2>Quiz Interativo</h2>
+      <div id="quiz-container"></div>
+    </section>
+  </main>
+
+  <script>
+    const quiz = [
+  { question: "1. Qual modelo de ciclo de vida é mais comum em projetos ágeis?", options: ["Cascata", "Iterativo/Incremental", "V-Model", "Big Bang"], answer: 1 },
+  { question: "2. O que é testado no nível de teste de componente?", options: ["A aplicação completa", "Integração entre módulos", "Unidades isoladas", "Interface do usuário"], answer: 2 },
+  { question: "3. Qual nível de teste valida a experiência do cliente com o sistema?", options: ["Sistema", "Aceitação", "Integração", "Componente"], answer: 1 },
+  { question: "4. Qual tipo de teste avalia requisitos como desempenho e segurança?", options: ["Funcional", "Re-teste", "Não-funcional", "Aceitação"], answer: 2 },
+  { question: "5. Qual objetivo do re-teste?", options: ["Executar testes automatizados", "Executar novamente testes com novas entradas", "Verificar se um defeito foi corrigido", "Validar a usabilidade do sistema"], answer: 2 },
+  { question: "6. O que é um teste de regressão?", options: ["Novo teste exploratório", "Teste realizado por usuários finais", "Teste para verificar se mudanças não quebraram funcionalidades existentes", "Teste de carga"], answer: 2 },
+  { question: "7. Qual nível de teste garante que os módulos funcionam em conjunto?", options: ["Componente", "Sistema", "Integração", "Requisito"], answer: 2 },
+  { question: "8. Teste corretivo está relacionado a:", options: ["Melhoria de desempenho", "Correção de defeitos", "Adaptação a novos ambientes", "Testes exploratórios"], answer: 1 },
+  { question: "9. Qual teste verifica se o sistema como um todo está conforme especificado?", options: ["Teste de sistema", "Teste de componente", "Teste de regressão", "Teste de usabilidade"], answer: 0 },
+  { question: "10. Teste de manutenção pode incluir:", options: ["Testes corretivos", "Testes adaptativos", "Testes preventivos", "Todas as anteriores"], answer: 3 }
+];
+
+const container = document.getElementById("quiz-container");
+quiz.forEach((q, i) => {
+  const div = document.createElement("div");
+  div.className = "question";
+  div.innerHTML = `<p><strong>${q.question}</strong></p>` +
+    q.options.map((opt, idx) => `
+      <div>
+        <input type="radio" name="q${i}" id="q${i}a${idx}" value="${idx}">
+        <label for="q${i}a${idx}">${opt}</label>
+      </div>`).join("") +
+    `<button onclick="checkAnswer(${i}, ${q.answer})">Verificar</button>
+     <p id="feedback${i}"></p>`;
+  container.appendChild(div);
+});
+
+function checkAnswer(questionIdx, correctIdx) {
+  const selected = document.querySelector(`input[name='q${questionIdx}']:checked`);
+  const feedback = document.getElementById(`feedback${questionIdx}`);
+  if (!selected) {
+    feedback.textContent = "Selecione uma opção.";
+    feedback.className = "incorrect";
+    return;
+  }
+  if (parseInt(selected.value) === correctIdx) {
+    feedback.textContent = "✔️ Resposta correta!";
+    feedback.className = "correct";
+  } else {
+    feedback.textContent = "❌ Resposta incorreta.";
+    feedback.className = "incorrect";
+  }
+}
+  </script>
+</body>
+</html>

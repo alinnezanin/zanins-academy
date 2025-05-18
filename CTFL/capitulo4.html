@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 4 - Análise e Modelagem de Teste</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #f9f9f9; color: #222; margin: 0; padding: 0; }
+    header { background: #003366; color: white; padding: 1.5rem; text-align: center; }
+    h1 { font-size: 2rem; color: white; }
+    main { max-width: 900px; margin: auto; padding: 2rem; }
+    h2, h3 { color: #003366; }
+    section { margin-bottom: 2rem; }
+    .question { margin-bottom: 1.5rem; background: #fff; padding: 1rem; border-left: 5px solid #003366; }
+    button { margin-top: 0.5rem; background-color: #003366; color: white; border: none; padding: 0.4rem 0.8rem; cursor: pointer; }
+    .correct { color: green; font-weight: bold; }
+    .incorrect { color: red; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CTFL 4.0 – Capítulo 4<br>Conteúdo e Quiz Interativo</h1>
+  </header>
+  <main>
+    <section>
+      <h2>1. Bases de Teste e Cobertura</h2>
+      <p>As bases de teste são as fontes de informação que servem para criar os casos de teste, como requisitos, manuais, regras de negócio e código-fonte. A cobertura é uma medida de quanto do item base foi verificado pelos testes.</p>
+    </section>
+
+    <section>
+      <h2>2. Testes Baseados em Requisitos e Estrutura</h2>
+      <p>Os testes podem se basear em:</p>
+      <ul>
+        <li><strong>Caixa-preta:</strong> focam em comportamento externo do sistema.</li>
+        <li><strong>Caixa-branca:</strong> focam na lógica interna e estrutura do código.</li>
+        <li><strong>Baseados em experiência:</strong> utilizam o conhecimento dos testadores.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Técnicas de Teste de Caixa-Preta</h2>
+      <ul>
+        <li><strong>Particionamento de equivalência:</strong> divide os dados em grupos válidos e inválidos.</li>
+        <li><strong>Análise do valor limite:</strong> testa valores nas extremidades de partições.</li>
+        <li><strong>Tabelas de decisão:</strong> testam combinações de entradas e suas saídas esperadas.</li>
+        <li><strong>Tabela de transição de estados:</strong> modela estados e transições em sistemas reativos.</li>
+        <li><strong>Teste baseado em casos de uso:</strong> garante que os fluxos descritos estão corretos.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Técnicas de Caixa-Branca</h2>
+      <p>Utilizadas principalmente por desenvolvedores e testadores técnicos. As principais são:</p>
+      <ul>
+        <li><strong>Cobertura de instruções:</strong> cada linha de código é executada ao menos uma vez.</li>
+        <li><strong>Cobertura de decisões:</strong> cada decisão (if, else) é avaliada como verdadeira e falsa.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Técnicas Baseadas em Experiência</h2>
+      <ul>
+        <li><strong>Teste exploratório:</strong> realizado com pouca documentação, baseado em investigação.</li>
+        <li><strong>Checklist:</strong> lista de itens a serem verificados, baseada em histórico e conhecimento.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>6. Seleção de Técnicas de Teste</h2>
+      <p>A escolha das técnicas depende de:</p>
+      <ul>
+        <li>Tipo de sistema</li>
+        <li>Riscos</li>
+        <li>Objetivos do teste</li>
+        <li>Nível e tipo de teste</li>
+        <li>Documentação disponível</li>
+        <li>Experiência da equipe</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Videoaula</h2>
+      <p>Assista à videoaula completa clicando no link abaixo:</p>
+      <a href="#" target="_blank">▶️ Assistir à videoaula</a>
+    </section>
+
+    <section>
+      <h2>Quiz Interativo</h2>
+      <div id="quiz-container"></div>
+    </section>
+  </main>
+  <script>
+    const quiz = [
+      { question: "1. O que são bases de teste?", options: ["Testes antigos", "Critérios de aceite", "Fontes de informação para criar testes", "Casos de uso automatizados"], answer: 2 },
+      { question: "2. O que mede a cobertura de teste?", options: ["A qualidade do código", "A quantidade de bugs", "Quanto do item base foi testado", "O número de testes criados"], answer: 2 },
+      { question: "3. A técnica de partição de equivalência visa:", options: ["Testar todos os fluxos possíveis", "Dividir os dados em grupos válidos e inválidos", "Cobrir todas as instruções", "Usar a experiência do testador"], answer: 1 },
+      { question: "4. O valor limite testa:", options: ["Dados médios", "Somente valores inválidos", "Extremos das partições", "Funções críticas"], answer: 2 },
+      { question: "5. As tabelas de decisão são usadas para:", options: ["Simular interfaces", "Testar valores únicos", "Testar combinações de entradas", "Identificar classes de equivalência"], answer: 2 },
+      { question: "6. A cobertura de decisão assegura:", options: ["Execução de todas as linhas", "Cobertura de múltiplos navegadores", "Avaliação de condições como verdadeiras e falsas", "Execução de scripts"], answer: 2 },
+      { question: "7. O teste exploratório depende de:", options: ["Casos de uso formalizados", "Execução automatizada", "Planejamento rigoroso", "Investigação e experiência"], answer: 3 },
+      { question: "8. A técnica checklist é baseada em:", options: ["Fluxogramas", "Tabelas de decisão", "Listas baseadas em histórico", "Valor limite"], answer: 2 },
+      { question: "9. Técnicas de caixa-branca envolvem:", options: ["Fluxos de usuário", "Cobertura estrutural do código", "Testes manuais", "Testes não funcionais"], answer: 1 },
+      { question: "10. A escolha da técnica depende de:", options: ["Framework utilizado", "Tempo de desenvolvimento", "Riscos, objetivos e contexto", "Número de linhas de código"], answer: 2 }
+    ];
+    const container = document.getElementById("quiz-container");
+    quiz.forEach((q, i) => {
+      const div = document.createElement("div");
+      div.className = "question";
+      div.innerHTML = `<p><strong>${q.question}</strong></p>` +
+        q.options.map((opt, idx) => `
+          <div>
+            <input type="radio" name="q${i}" id="q${i}a${idx}" value="${idx}">
+            <label for="q${i}a${idx}">${opt}</label>
+          </div>`).join("") +
+        `<button onclick="checkAnswer(${i}, ${q.answer})">Verificar</button>
+         <p id="feedback${i}"></p>`;
+      container.appendChild(div);
+    });
+    function checkAnswer(questionIdx, correctIdx) {
+      const selected = document.querySelector(`input[name='q${questionIdx}']:checked`);
+      const feedback = document.getElementById(`feedback${questionIdx}`);
+      if (!selected) {
+        feedback.textContent = "Selecione uma opção.";
+        feedback.className = "incorrect";
+        return;
+      }
+      if (parseInt(selected.value) === correctIdx) {
+        feedback.textContent = "✔️ Resposta correta!";
+        feedback.className = "correct";
+      } else {
+        feedback.textContent = "❌ Resposta incorreta.";
+        feedback.className = "incorrect";
+      }
+    }
+  </script>
+</body>
+</html>
